@@ -9,7 +9,21 @@ Plugin for deploying a local business directory, using the CityGrid API
 
 == Description ==
 
-Plugin for deploying a local business directory, using the CityGrid API
+CityGrid provides a wealth of content from local businesses and places. Using the CityGrid API you can pull places including their address, city, state, zip code and phone number. You can also pull a wealth of other content including photos, videos, reviews and offers.
+
+This Wordpress plug allows you deploy a local business directory for any Wordpress blog.  
+
+To use this module you will need to register for a CityGrid publisher account at http://developer.citygridmedia.com/. The system will work temporarily without a publisher code, but if you wish to take advantage of advertising or revenue sharing opportunities, and have it work reliably, you will need to have your own publisher code.
+
+Once you have your publisher code you can enter it on the plugin settings page.
+
+After setting your publisher code you can choose the location you will pull your business listings from. A location is "where" you want to provide a search for, this can include: Cities, Neighborhoods, Zip Codes, Metro Areas, Addresses and Intersections. 
+
+Next choose "what" categories you would like to have in your directory.  Categories can be any keyword you wish, such as pizza, sushi or tires.  For examples visit any CitySearch (http://citysearch.com/) site, and browse other categories.   Enter your categories separated by commas in your settings, hit save and it will build out a separate directory page for each category.
+
+Additionally you can also choose to display or not display CityGrid ads on your Hyp3rL0cal directory. 
+
+If you have any questions visit the CityGrid Developer Forum or follow us on Twitter using @citygridapiteam.
 
 == Installation ==
 
