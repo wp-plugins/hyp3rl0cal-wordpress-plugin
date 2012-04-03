@@ -34,6 +34,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
 		$the_page_body = "";
 		
 		if ( ! $the_page ) {
+			
+			if(strlen($the_page_title)>2) {
 		
 		    $_p = array();
 		    $_p['post_title'] = $the_page_title;
@@ -48,6 +50,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
 		    
 		    update_post_meta( $the_page_id, '_wp_page_template', 'cg-search.php' );
 		    update_post_meta( $the_page_id, 'what', $page ); 
+			}
 		
 		}
 		else {
@@ -64,6 +67,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
 	}	
 	
 	update_option( 'show_ads', $_POST['show_ads']);
+	
+	update_option( 'ui_template', $_POST['ui_template']);
 	
 	}
 ?>
@@ -123,7 +128,18 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
         	</select>
         	Whether you would like to show advertisements on your directory page.
         </td>
-        </tr>        
+        </tr>     
+        
+        <tr valign="top">
+        <th scope="row">Template</th>
+        <td>
+        	<select name="ui_template">
+        		<option value="Default"<?php if(get_option('ui_template')=='Default'){ ?> selected<?php } ?>>Default</option>
+        		<option value="CityGrid"<?php if(get_option('ui_template')=='CityGrid'){ ?> selected<?php } ?>>CityGrid</option>
+        	</select>
+        	This determines which template your directory displays your places listing and detail with. (Default, CityGrid)
+        </td>
+        </tr>            
         
     </table>
     

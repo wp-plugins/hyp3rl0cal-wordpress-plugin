@@ -44,6 +44,7 @@ add_action( 'admin_menu', 'cg_create_menu' );
 //call register settings function
 add_action( 'admin_init', 'cg_register_settings' );
 add_action('wp_enqueue_scripts', 'cg_scripts_method');
+add_action( 'wp_enqueue_scripts', 'cg_stylesheet_method' );
 
 register_activation_hook(__FILE__, 'cg_activate');
 register_deactivation_hook(__FILE__, 'cg_deactivate');
@@ -54,6 +55,24 @@ function cg_scripts_method() {
     wp_register_script( 'citygrid', 'http://static.citygridmedia.com/ads/scripts/v2/loader.js');
     wp_enqueue_script( 'citygrid' );
 }    
+
+function cg_stylesheet_method() {
+	
+	// CityGrid UI Template
+	if(get_option('ui_template')=='CityGrid')
+		{	
+        // Respects SSL, Style.css is relative to the current file
+        wp_register_style( 'cg-style', plugins_url('cg-citygrid.css', __FILE__) );
+        wp_enqueue_style( 'cg-style' );
+		}
+	else
+		{
+		// Default UI Template	
+        // Respects SSL, Style.css is relative to the current file
+        wp_register_style( 'cg-style', plugins_url('cg-citygrid.css', __FILE__) );
+        wp_enqueue_style( 'cg-style' );		
+		}
+    }
 
 // activating the default values
 function cg_activate() {
@@ -187,6 +206,13 @@ function cg_register_settings() {
 		{	
 		update_option( 'show_ads', 'yes' );
 		}
+		
+	register_setting( 'cg-settings-group', 'ui_template' );
+	
+	if(!get_option('ui_template'))
+		{	
+		update_option( 'ui_template', 'Default' );
+		}		
 	
 }
 
