@@ -69,7 +69,7 @@ function cg_stylesheet_method() {
 		{
 		// Default UI Template	
         // Respects SSL, Style.css is relative to the current file
-        wp_register_style( 'cg-style', plugins_url('cg-citygrid.css', __FILE__) );
+        wp_register_style( 'cg-style', plugins_url('cg-default.css', __FILE__) );
         wp_enqueue_style( 'cg-style' );		
 		}
     }

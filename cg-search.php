@@ -36,8 +36,7 @@ if(isset($_REQUEST['sort'])){ $sort = $_REQUEST['sort'];} elseif(isset($_POST['s
 if($id!='') 
 	{
 		
-	// Switch Template
-//	echo "Template: " . $template . "<br />";
+	// Detail
 	
 	if($template=='Default') 
 		{
@@ -512,7 +511,23 @@ if($id!='')
 			</center>
 			<br />
 			</div>
-		</div>					
+		</div>	
+		
+		<!-- Begin CityGrid Tracker -->
+		<script type="text/javascript">
+		    var _csv = {};
+		    _csv['action_target'] = 'listing_profile';
+		    _csv['listing_id'] = '<?php echo $id; ?>';
+		    _csv['publisher'] = '<?php echo $publishercode; ?>';
+		    _csv['reference_id'] = '<?php echo $reference_id; ?>';
+		    _csv['ua'] = '<?php echo $_SERVER['HTTP_USER_AGENT']; ?>';
+		    _csv['i'] = '<?php echo $impression_id; ?>';
+		</script>
+		<script type="text/javascript" src="http://api.citygridmedia.com/ads/tracker/assets/api/scripts/tracker.js"></script>
+		<noscript>
+		    <img src='http://api.citygridmedia.com/ads/tracker/imp?action_target=listing_profile&listing_id=<?php echo $id; ?>&publisher=<?php echo $publishercode; ?>&reference_id=<?php echo $reference_id; ?>&ua=<?php echo $_SERVER['HTTP_USER_AGENT']; ?>&i=<?php echo $impression_id; ?>' width='1' height='1' alt='' />
+		</noscript>
+		<!-- End CityGrid Tracker -->			
 				
 		<?php
 	
@@ -885,6 +900,23 @@ if($id!='')
 				</div>	
 			</div>
 		</div>
+		
+		<!-- Begin CityGrid Tracker -->
+		<script type="text/javascript">
+		    var _csv = {};
+		    _csv['action_target'] = 'listing_profile';
+		    _csv['listing_id'] = '<?php echo $id; ?>';
+		    _csv['publisher'] = '<?php echo $publishercode; ?>';
+		    _csv['reference_id'] = '<?php echo $reference_id; ?>';
+		    _csv['ua'] = '<?php echo $_SERVER['HTTP_USER_AGENT']; ?>';
+		    _csv['i'] = '<?php echo $impression_id; ?>';
+		</script>
+		<script type="text/javascript" src="http://api.citygridmedia.com/ads/tracker/assets/api/scripts/tracker.js"></script>
+		<noscript>
+		    <img src='http://api.citygridmedia.com/ads/tracker/imp?action_target=listing_profile&listing_id=<?php echo $id; ?>&publisher=<?php echo $publishercode; ?>&reference_id=<?php echo $reference_id; ?>&ua=<?php echo $_SERVER['HTTP_USER_AGENT']; ?>&i=<?php echo $impression_id; ?>' width='1' height='1' alt='' />
+		</noscript>
+		<!-- End CityGrid Tracker -->			
+		
 		<?php
 		}
 	
